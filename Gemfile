@@ -1,16 +1,29 @@
 source 'http://rubygems.org'
 
+gem 'acts-as-taggable-on', '3.4.3'
 
+gem 'gravatar_image_tag', '0.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-
 # Use sqlite3 as the database for Active Record
+
+group :production, :staging do
+  gem "pg"
+end
+
 group :development, :test do
-  gem 'sqlite3'
+  gem "sqlite3-ruby", :require => "sqlite3"
 end
-group :production do
-  gem 'pg'
+
+group :development do
+gem 'rspec-rails', '2.0.1'
 end
+group :test do
+gem 'rspec', '2.0.1'
+gem 'webrat', '0.7.1'
+end
+
+gem 'font-awesome-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -31,8 +44,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
+ gem 'bcrypt', '~> 3.1.7'
+ 
+ gem 'faker',                '1.4.2'
+gem 'will_paginate',           '3.0.7'
 # Use unicorn as the app server
 # gem 'unicorn'
 

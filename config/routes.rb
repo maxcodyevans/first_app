@@ -1,15 +1,38 @@
 Rails.application.routes.draw do
+  
+
+  resources :microposts
+  resources :users
+  resources :sessions
+
+
+
+ match '/contact', :to => 'users#contact',  via: 'get'
+ match '/about', :to => 'users#about', via: 'get'
+ match '/help', :to => 'users#help',   via: 'get'
+ match '/new', :to => 'users#new',          via: 'get'
+ match '/index', :to => 'users#index',          via: 'get'
+  match '/new',  to: 'users#new',            via: 'get'
+  match '/login',  to: 'sessions#new',         via: 'get'
+  match '/logout', to: 'sessions#destroy',     via: 'delete'
+
+  
+  match '/post', :to => 'micropost#index',          via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'application#hello'
+  # root 'welcome#index'
+   root 'users#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
