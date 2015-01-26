@@ -1,3 +1,4 @@
+
 source 'http://rubygems.org'
 
 gem 'acts-as-taggable-on', '3.4.3'
@@ -45,6 +46,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
+
  
  gem 'faker',                '1.4.2'
 gem 'will_paginate',           '3.0.7'
@@ -59,3 +61,5 @@ gem 'will_paginate',           '3.0.7'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+

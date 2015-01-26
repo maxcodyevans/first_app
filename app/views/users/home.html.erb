@@ -25,13 +25,13 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-      	<td><%= gravatar_for user %></td>
-        <td><%= user.name %></td>
-        <td><span	><%= user.tag_list %></td>
+      	<td><section class="pictureround"><%= link_to gravatar_for( user, size:150), user %></section></td>
+        <td><%= user.name %></br> </br> I teach 
+        <%= user.tag_list %> ... </td>
    		<% if user.microposts.any? %>
     		 <td><%= user.microposts.first.content %></td>
     	<% end %>
-        <td><%= link_to 'Show', user %></td>
+  
 
       </tr>
     <% end %>
